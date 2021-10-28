@@ -39,10 +39,10 @@ bool Io::IsEmpty() {
   string s;
   std::streampos pos = in.tellg();
   in >> s;
-  bool ok = in;
+  bool ok = s.empty();
   in.seekg(pos);
   in.clear();
-  return !ok;
+  return ok;
 }
 
 void Io::PrepareIn () {

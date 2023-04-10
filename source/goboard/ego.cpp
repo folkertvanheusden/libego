@@ -16,4 +16,5 @@
 #include "board.cpp"
 
 #include "benchmark.cpp"
+#include "perft.cpp"
 #include "playout_test.cpp"

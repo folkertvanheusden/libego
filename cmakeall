@@ -16,7 +16,7 @@ usage () {
 
 if test $# -ge 1; then 
   if test "$1" = "Release"; then
-    BUILD_TYPE="Release"
+    BUILD_TYPE="RelWithDebInfo"
     shift
   elif test "$1" = "Debug"; then
     BUILD_TYPE="Debug"

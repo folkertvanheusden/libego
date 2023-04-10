@@ -25,6 +25,7 @@
 #include "sampler.hpp"
 
 #include "benchmark.hpp"
+#include "perft.hpp"
 #include "playout_test.hpp"
 
 #endif

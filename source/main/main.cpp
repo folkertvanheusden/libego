@@ -25,6 +25,12 @@ void GtpBenchmark (Gtp::Io& io) {
   io.out << Benchmark::Run (n);
 }
 
+void GtpPerft (Gtp::Io& io) {
+  uint d = io.Read<uint> (3);
+  io.CheckEmpty ();
+  io.out << Perft::Run (d);
+}
+
 void GtpBoardTest (Gtp::Io& io) {
   bool print_moves = io.Read<bool> (false);
   io.CheckEmpty ();
@@ -55,6 +61,7 @@ int main(int argc, char** argv) {
   gtp.Register ("board_test", GtpBoardTest);
   gtp.Register ("sampler_test", GtpSamplerTest);
   gtp.Register ("mm_test", GtpMmTest);
+  gtp.Register ("perft", GtpPerft);
 
   Engine& engine = *(new Engine());
   MctsGtp mcts_gtp (engine);

@@ -46,5 +46,7 @@ namespace Perft {
 		for (int i=1; i<=depth; i++) {
 			printf("%d: %lu\n", i, perft(board, Player::Black(), i));
 		}
+
+		return "";
 	}
 }

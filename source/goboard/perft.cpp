@@ -6,7 +6,7 @@
 #include "perft.hpp"
 
 namespace Perft {
-	uint64_t perft(Board & board, const Player & p, const int depth) {
+	uint64_t perft(const Board & board, const Player & p, const int depth) {
 		uint64_t count = 0;
 
 		int dim = board.Size();
@@ -23,14 +23,15 @@ namespace Perft {
 				if (board.IsLegal(m) == false)
 					continue;
 
-				board.PlayLegal(m);
+				Board copy;
+				copy.Load(board);
+
+				copy.PlayLegal(m);
 
 				if (new_depth)
-					count += perft(board, new_player, new_depth);
+					count += perft(copy, new_player, new_depth);
 				else
 					count++;
-
-				board.Undo();
 			}
 		}
 
